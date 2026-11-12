@@ -1,0 +1,215 @@
+{
+ "schema": 1,
+ "note": "Read-only charging history from the Tesla app. Optional per session: kwh, price_per_kwh. When price_per_kwh (or cost_usd/kwh) is present, the app builds a built-in off-peak band for that site (off_peak_start..off_peak_end, 24h clock). Built-in schedules in this file take priority over history-derived bands. User-entered prices in localStorage override builtins unless a new schedules_version pushes updates for those site ids.",
+ "default_off_peak": {
+  "start": 23,
+  "end": 8
+ },
+ "sessions": [
+  {
+   "date": "2026-10-20",
+   "time": "03:43",
+   "label": "Santa Clarita, CA",
+   "site_id": 1306,
+   "cost_usd": 5.73,
+   "kwh": 17.92,
+   "price_per_kwh": 0.32,
+   "period": "off-peak",
+   "match_note": "Ambiguous: also 'Santa Clarita, CA - Newhall Ranch Rd' (5527); chose exact-name site 1306"
+  },
+  {
+   "date": "2026-10-18",
+   "time": "07:12",
+   "label": "Santa Clarita, CA",
+   "site_id": 1306,
+   "cost_usd": 3.24,
+   "kwh": 10.1472,
+   "price_per_kwh": 0.32,
+   "period": "off-peak",
+   "match_note": "Ambiguous: also 5527 (Newhall Ranch Rd); chose exact-name site 1306"
+  },
+  {
+   "date": "2026-10-05",
+   "time": "07:52",
+   "label": "Victorville, CA - Roy Rogers Drive",
+   "site_id": 8146,
+   "cost_usd": 7.5,
+   "kwh": 26.8144,
+   "price_per_kwh": 0.28,
+   "period": "off-peak"
+  },
+  {
+   "date": "2026-10-05",
+   "time": "04:51",
+   "label": "North Las Vegas, NV - East Lake Mead South Boulevard",
+   "site_id": 9299,
+   "cost_usd": 9.47,
+   "kwh": 36.4312,
+   "price_per_kwh": 0.26,
+   "period": "off-peak"
+  },
+  {
+   "date": "2026-10-05",
+   "time": "02:27",
+   "label": "St. George, UT",
+   "site_id": 192,
+   "cost_usd": 13.35,
+   "kwh": 58.057,
+   "price_per_kwh": 0.23,
+   "period": "off-peak",
+   "match_note": "Ambiguous: also S Pioneer Rd (11391) and S Convention Center Dr (6163); chose exact-name site 192"
+  },
+  {
+   "date": "2026-10-05",
+   "time": "00:54",
+   "label": "Beaver, UT",
+   "site_id": 187,
+   "cost_usd": 3.6,
+   "kwh": 9.007,
+   "price_per_kwh": 0.4,
+   "period": "off-peak",
+   "match_note": "Ambiguous: also Beaver, UT - 525 W (3610, same block) and W 1425 N (8599); chose exact-name site 187"
+  },
+  {
+   "date": "2026-10-04",
+   "time": "22:03",
+   "label": "Orem, UT",
+   "site_id": 7439,
+   "cost_usd": 8.64,
+   "kwh": 37.5854,
+   "price_per_kwh": 0.23,
+   "period": "off-peak",
+   "match_note": "Also 'Orem, UT - N 980 W' (10788); chose exact-name site 7439"
+  },
+  {
+   "date": "2026-10-03",
+   "time": "02:42",
+   "label": "Orem, UT - North 980 West",
+   "site_id": 10788,
+   "cost_usd": 6.24,
+   "kwh": 24.9766,
+   "price_per_kwh": 0.25,
+   "period": "off-peak"
+  },
+  {
+   "date": "2026-03-28",
+   "time": "07:14",
+   "label": "Scipio, UT - 815 N 800 W St",
+   "site_id": 6462,
+   "cost_usd": 15.69,
+   "kwh": 43.5866,
+   "price_per_kwh": 0.36,
+   "period": "off-peak",
+   "duration_min": 36,
+   "type": "Supercharging"
+  },
+  {
+   "date": "2026-02-21",
+   "time": "07:18",
+   "label": "Cedar City, UT - 1065 S Main St",
+   "site_id": 8134,
+   "cost_usd": 10.42,
+   "kwh": 30.6644,
+   "price_per_kwh": 0.34,
+   "period": "off-peak",
+   "duration_min": 26,
+   "type": "Supercharging"
+  }
+ ],
+ "schedules_note": "Built-in full 24h price schedules keyed by supercharge.info site id. bands: [startHour, endHour, $/kWh] on a 24h clock (end exclusive; may wrap past midnight, e.g. [22,6,0.2]). Every hour should be covered. Optional: congestion_fee_per_min, entered, source. Takes priority over history-derived off-peak bands; localStorage prices still override. Optional 'open': [startHour,endHour] = site opening hours (24h clock, fractional ok e.g. 4.5, end exclusive, may wrap); the planner never schedules a stop whose arrival-to-departure window falls outside it. Optional 'guess_bands': [[start,end,$/kWh]] = hours with an assumed (unconfirmed) price, treated as an estimate with the usual guessed-price penalty.",
+ "schedules": {
+  "9299": {
+   "name": "North Las Vegas, NV - E Lake Mead S Blvd",
+   "bands": [
+    [
+     0,
+     8,
+     0.23
+    ],
+    [
+     8,
+     20,
+     0.46
+    ],
+    [
+     20,
+     24,
+     0.35
+    ]
+   ],
+   "congestion_fee_per_min": 0.5,
+   "entered": "2026-11-12",
+   "source": "user: 12 AM-8 AM $0.23/kWh, 8 AM-8 PM $0.46/kWh, 8 PM-12 AM $0.35/kWh (full 24h; supersedes prior NLV windows)"
+  },
+  "3417": {
+   "name": "Tejon Ranch, CA - Outlets at Tejon Pkwy",
+   "bands": [
+    [
+     8,
+     23,
+     0.46
+    ]
+   ],
+   "guess_bands": [
+    [
+     4,
+     8,
+     0.46
+    ]
+   ],
+   "open": [
+    4.5,
+    23
+   ],
+   "entered": "2026-10-26",
+   "source": "user: 8 AM-11 PM $0.46/kWh (known); open 4:30 AM-11 PM daily; 4:30-8 AM price guessed at $0.46"
+  },
+  "121": {
+   "name": "Tejon Ranch, CA (5602 Dennis McCarthy Dr, Lebec)",
+   "guess_bands": [
+    [
+     0,
+     24,
+     0.47
+    ]
+   ],
+   "entered": "2026-10-26",
+   "source": "third-party tracked rate (estimate, not a car-screen price); open 24 hours"
+  },
+  "8146": {
+   "name": "Victorville, CA - Roy Rogers Dr",
+   "bands": [
+    [
+     23,
+     8,
+     0.28
+    ],
+    [
+     8,
+     23,
+     0.49
+    ]
+   ],
+   "entered": "2026-11-12",
+   "source": "user: 11 PM-8 AM $0.28/kWh, 8 AM-11 PM $0.49/kWh"
+  },
+  "192": {
+   "name": "St. George, UT (1091 N Bluff St)",
+   "bands": [
+    [
+     22,
+     8,
+     0.23
+    ],
+    [
+     8,
+     22,
+     0.43
+    ]
+   ],
+   "entered": "2026-11-12",
+   "source": "user: 10 PM-8 AM $0.23/kWh, 8 AM-10 PM $0.43/kWh"
+  }
+ },
+ "schedules_version": 22
+}

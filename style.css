@@ -1,0 +1,28 @@
+body{font-family:-apple-system,system-ui,sans-serif;margin:0;background:#f4f4f6;color:#111;padding-bottom:env(safe-area-inset-bottom)}
+header{background:#171a20;color:#fff;padding:12px 16px;padding-top:calc(12px + env(safe-area-inset-top));font-weight:600}
+.wrap{max-width:720px;margin:auto;padding:12px}
+.card{background:#fff;border-radius:12px;padding:12px;margin-bottom:12px;box-shadow:0 1px 3px #0002}
+label{display:block;font-size:13px;color:#555;margin-top:8px}
+input,select{width:100%;box-sizing:border-box;font-size:16px;padding:9px;border:1px solid #ccc;border-radius:8px;background:#fff}
+.row{display:flex;gap:8px}.row>div{flex:1}
+button{background:#3e6ae1;color:#fff;border:0;border-radius:8px;padding:11px 14px;font-size:16px;margin-top:10px;width:100%}
+button.sm{width:auto;padding:6px 10px;font-size:13px;margin:4px 4px 0 0;background:#555}
+button.ghost{background:#e5e7eb;color:#111}
+#map{height:340px;border-radius:12px;margin-bottom:12px}
+.opt{border-top:1px solid #eee;padding:8px 0;font-size:14px}.best{background:#eef7ee;border-radius:8px;padding:8px}
+.unk{color:#b45309;font-weight:600}.warn{font-size:12px;color:#a00}.muted{color:#666;font-size:12px}
+.sug{font-size:14px;background:#fff;border-radius:8px;box-shadow:0 2px 6px #0002}.sug div{padding:9px;border-bottom:1px solid #eee}
+dialog{border:0;border-radius:14px;width:min(94vw,460px);padding:14px;box-sizing:border-box}dialog::backdrop{background:#0006}
+.band{display:flex;gap:6px;align-items:center;margin-top:6px}.band select{flex:1}.band input{flex:1.2}.band .x{width:38px;margin:0;padding:8px;background:#dc2626}
+.err{color:#dc2626;font-size:13px}
+.hb{display:inline-block;background:#ede9fe;color:#5b21b6;border-radius:6px;padding:2px 6px;font-size:12px;font-weight:600;margin:2px 0}
+
+.warnb{background:#fef3c7;color:#92400e;border-radius:6px;padding:6px;margin:6px 0;font-size:13px}.tip{background:#dbeafe;color:#1e3a8a;border-radius:6px;padding:6px;margin:6px 0;font-size:14px}details summary{cursor:pointer;color:#3e6ae1;padding:8px 0;font-size:14px}
+
+.tm{color:#1d4ed8;background:#dbeafe;border-radius:4px;padding:0 4px}.tip.big{font-size:15px;margin:0 0 8px}
+
+label.chk{display:flex;align-items:center;gap:8px;margin-top:10px}label.chk input{width:auto;margin:0}
+
+.nav{margin:6px 0;display:flex;gap:10px;align-items:center}.nav a.car{background:#3e6ae1;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:600}.nav a.gm{font-size:.85em;color:#3e6ae1}.hint{margin:6px 4px}
+
+.trip{border-top:1px solid #333;padding:8px 0}.trip:first-child{border-top:0}.trip .sm{margin-right:6px}.sm.del{background:#dc2626}#save{margin-top:8px;background:#16a34a}
